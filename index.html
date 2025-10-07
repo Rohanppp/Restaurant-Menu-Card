@@ -32,6 +32,15 @@
     <!-- Main Content -->
     <main class="main-content">
         <div class="container">
+            <!-- Dietary Filter Toolbar -->
+            <div class="filter-bar" aria-label="Dietary filters">
+                <button class="chip active" data-filter="all">All</button>
+                <button class="chip" data-filter="veg">Veg</button>
+                <button class="chip" data-filter="non-veg">Non-Veg</button>
+                <button class="chip" data-filter="vegan">Vegan</button>
+                <button class="chip" data-filter="gluten-free">Gluten-Free</button>
+                <button class="chip" data-filter="spicy">Spicy</button>
+            </div>
             
             <!-- Appetizers Section -->
             <section id="appetizers" class="menu-section">
@@ -338,6 +347,42 @@
             </div>
         </div>
     </footer>
+    
+    <!-- Cart Toggle and Drawer -->
+    <button class="cart-toggle" aria-label="Open cart" title="Open cart">
+        🛒 <span class="count">0</span>
+    </button>
+
+    <aside class="cart-drawer" aria-hidden="true">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="cart-close" aria-label="Close cart">×</button>
+        </div>
+        <div class="cart-body">
+            <div class="cart-items"></div>
+            <div class="cart-empty">Your cart is empty.</div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total</span>
+                <strong class="total-amount">₹0</strong>
+            </div>
+            <div class="order-section">
+                <h4>Place Order</h4>
+                <form class="order-form">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="tel" name="phone" placeholder="Phone" required>
+                    <textarea name="address" placeholder="Delivery Address" rows="3" required></textarea>
+                    <div class="order-actions">
+                        <button type="submit" class="btn btn-primary place-order">Place Order</button>
+                        <button type="button" class="btn btn-primary whatsapp-order">WhatsApp Order</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </aside>
+
+    <script src="script.js"></script>
 
 </body>
 </html>

@@ -465,3 +465,215 @@ html {
         height: 40px;
     }
 }
+
+/* Cart & Ordering UI */
+.cart-toggle {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background: #8B0000;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 0.8rem 1.1rem;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    z-index: 1000;
+}
+.cart-toggle .count {
+    background: #FFD700;
+    color: #8B0000;
+    padding: 0.1rem 0.5rem;
+    border-radius: 999px;
+    min-width: 22px;
+    text-align: center;
+}
+
+.cart-drawer {
+    position: fixed;
+    top: 0;
+    right: -420px;
+    width: 420px;
+    max-width: 90vw;
+    height: 100vh;
+    background: #fff;
+    box-shadow: -8px 0 24px rgba(0,0,0,0.15);
+    z-index: 1100;
+    display: flex;
+    flex-direction: column;
+    transition: right 0.3s ease;
+}
+.cart-drawer.open { right: 0; }
+
+.cart-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid #eee;
+}
+.cart-close {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.cart-body {
+    padding: 1rem 1.25rem;
+    overflow-y: auto;
+    flex: 1;
+}
+.cart-items { display: grid; gap: 0.75rem; }
+.cart-empty { color: #666; text-align: center; padding: 2rem 0; display: none; }
+
+.cart-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.5rem 1rem;
+    align-items: center;
+    padding: 0.75rem;
+    border: 1px solid #eee;
+    border-radius: 10px;
+}
+.cart-item .title { font-weight: 600; color: #2c3e50; }
+.cart-item .subtotal { font-weight: 700; color: #8B0000; }
+.qty-controls {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.qty-controls button {
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: #f2f2f2;
+    cursor: pointer;
+}
+.qty-controls input {
+    width: 40px;
+    text-align: center;
+    border: none;
+    outline: none;
+}
+.remove-item {
+    background: transparent;
+    border: none;
+    color: #b00020;
+    cursor: pointer;
+}
+
+.cart-footer {
+    border-top: 1px solid #eee;
+    padding: 1rem 1.25rem 1.25rem;
+}
+.cart-total { display: flex; justify-content: space-between; margin-bottom: 0.75rem; }
+.order-section h4 { margin: 0.5rem 0; color: #8B0000; }
+.order-form { display: grid; gap: 0.6rem; }
+.order-form input, .order-form textarea {
+    width: 100%;
+    padding: 0.6rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+.btn.btn-primary, .add-to-cart {
+    background: linear-gradient(135deg, #8B0000 0%, #B22222 50%, #DC143C 100%);
+    color: #fff;
+    border: none;
+    padding: 0.5rem 0.9rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+.add-to-cart { margin-left: 0.5rem; }
+
+/* Placement for buttons inside tables */
+.menu-table td:last-child {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.5rem;
+}
+
+/* Specials add-to-cart placement */
+.special-content .actions { display: flex; justify-content: flex-end; }
+
+@media (max-width: 480px) {
+    .cart-toggle { right: 12px; bottom: 12px; }
+}
+
+/* Low hovering effects (subtle lift) */
+/* Table rows */
+.menu-table tbody tr {
+    transition: transform 0.15s ease, filter 0.15s ease, background-color 0.3s ease;
+}
+.menu-table tbody tr:hover {
+    transform: translateY(-2px);
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.08));
+}
+
+/* Menu item container and image */
+.menu-item { transition: transform 0.15s ease; }
+.menu-item:hover { transform: translateY(-1px); }
+.menu-image { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.menu-image:hover { transform: scale(1.03); box-shadow: 0 4px 12px rgba(0,0,0,0.12); }
+
+/* Specials: image subtle scale on card hover */
+.special-image { transition: transform 0.25s ease; }
+.special-item:hover .special-image { transform: scale(1.02); }
+
+/* Color changes on hover */
+.menu-table tbody tr:hover .item-name { color: #8B0000; }
+.menu-table tbody tr:hover .price { color: #B22222; }
+.menu-item:hover .item-name { color: #8B0000; }
+.special-item:hover .special-content h3 { color: #B22222; }
+.special-item:hover .special-price { color: #DC143C; }
+.menu-image:hover { border-color: #FFA500; }
+
+/* Chips subtle hover */
+.chip { transition: transform 0.12s ease, box-shadow 0.12s ease; }
+.chip:hover { transform: translateY(-1px); box-shadow: 0 2px 8px rgba(0,0,0,0.08); background: #FFE680; color: #8B0000; border-color: #FFA500; }
+
+/* Filter Bar */
+.filter-bar {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+    justify-content: center;
+}
+.chip {
+    background: #f3f3f3;
+    border: 1px solid #e2e2e2;
+    color: #333;
+    padding: 0.4rem 0.75rem;
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: 600;
+}
+.chip.active {
+    background: #FFD700;
+    border-color: #DC143C;
+    color: #8B0000;
+}
+
+/* Dietary Badges */
+.badges { display: inline-flex; gap: 0.35rem; margin-left: 0.5rem; }
+.badge {
+    font-size: 0.7rem;
+    padding: 0.15rem 0.45rem;
+    border-radius: 6px;
+    border: 1px solid transparent;
+}
+.badge.veg { background: #eaf8e8; color: #1b7a1b; border-color: #bfe6bf; }
+.badge.non-veg { background: #fdeaea; color: #a11f1f; border-color: #f6c1c1; }
+.badge.vegan { background: #e9faf2; color: #0c7a4b; border-color: #bfeedd; }
+.badge.gluten-free { background: #eef5ff; color: #1a5fb4; border-color: #c9dcff; }
+.badge.spicy { background: #fff3e8; color: #b54800; border-color: #ffd7b8; }
+
+.hidden { display: none !important; }
