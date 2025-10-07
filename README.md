@@ -1,6 +1,16 @@
 # The Hungry Hub - Indian Cuisine Menu
 
-![Project Preview](images/image.png)
+![Project Preview](./images/image.png)
+
+<p align="center">
+  <img src="./images/image.png" alt="Project Preview" width="900" />
+  <br/>
+  <em>If the image above does not render in some viewers, this HTML fallback ensures visibility.</em>
+  <br/>
+  <em>Tip: make sure the `images/image.png` file is committed and pushed to your repo.</em>
+  <br/>
+  <em>Cache issue? Hard refresh the page (Ctrl+F5) on GitHub.</em>
+</p>
 
 A beautiful and responsive Indian restaurant menu page built with HTML and CSS, featuring authentic Indian cuisine, vibrant colors, and comprehensive menu sections.
 
