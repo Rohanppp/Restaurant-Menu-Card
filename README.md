@@ -1,7 +1,5 @@
 # The Hungry Hub - Indian Cuisine Menu
 
-![Project Preview](images/image.png)
-
 A beautiful and responsive Indian restaurant menu page built with HTML and CSS, featuring authentic Indian cuisine, vibrant colors, and comprehensive menu sections.
 
 ## 🍽️ Project Overview
